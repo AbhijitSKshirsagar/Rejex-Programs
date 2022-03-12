@@ -7,9 +7,10 @@ public class regex {
 
 	public static void main(String[] args) {
 		UserRegistration userRegistration = new UserRegistration();
-		userRegistration.firstName();
-		userRegistration.lastName();
-
+//		userRegistration.firstName();
+//		userRegistration.lastName();
+//		userRegistration.email();
+		userRegistration.contactNumber();
 	}
 }
 
@@ -40,6 +41,34 @@ class UserRegistration {
 			System.out.println("thank you");
 		} else {
 			System.out.println("please enter valid last name ");
+		}
+
+	}
+
+//User's Email Address
+	public void email() {
+		sc = new Scanner(System.in);
+		System.out.print("Enter email ID :: ");
+		String Email = sc.next();
+		Boolean answer = Pattern.matches("^[a-zA-Z0-9+_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", Email);
+		if (answer) {
+			System.out.println("thank you");
+		} else {
+			System.out.println("please enter valid email ID ");
+		}
+
+	}
+
+//User's Contact Number
+	public void contactNumber() {
+		sc = new Scanner(System.in);
+		System.out.print("Enter contact number with country code :: ");
+		String ContactNumber = sc.nextLine();
+		boolean answer = Pattern.matches("91\\s[0-9]{10}", ContactNumber);
+		if (answer) {
+			System.out.println("Thank you");
+		} else {
+			System.out.println("enter valid contact number");
 		}
 
 	}
